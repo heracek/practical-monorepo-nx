@@ -3,7 +3,7 @@ import { Form, Formik } from 'formik';
 import type { FormikConfig } from 'formik';
 import * as yup from 'yup';
 
-import { ErrorBanner, FormikField, LoadingButton } from 'src/ui';
+import { ErrorBanner, FormikField, LoadingButton } from '@quacker/ui';
 
 const initialValues = {
   email: '',

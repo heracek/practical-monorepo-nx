@@ -1,4 +1,4 @@
-import { Heading, Link, MainSection } from 'src/ui';
+import { Heading, Link, MainSection } from '@quacker/ui';
 import { TopNavigation } from 'src/navigation/ui';
 import { route } from '@quacker/navigation/util';
 

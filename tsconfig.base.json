@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@quacker/navigation/util": ["libs/navigation/util/src/index.ts"],
+      "@quacker/ui": ["libs/shared/design-system/ui/src/index.ts"],
       "src/*": ["apps/quacker-frontend/src/app/*"]
     }
   },

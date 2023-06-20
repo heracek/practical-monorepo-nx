@@ -1,6 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
 
-import { ScrollToTop } from 'src/ui';
+import { ScrollToTop } from '@quacker/ui';
 
 import { AuthProvider } from 'src/auth/context-ui';
 

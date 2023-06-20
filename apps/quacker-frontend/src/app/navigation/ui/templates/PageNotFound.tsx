@@ -1,4 +1,4 @@
-import { Link } from 'src/ui';
+import { Link } from '@quacker/ui';
 import { route } from '@quacker/navigation/util';
 
 import { Placeholder } from './Placeholder';

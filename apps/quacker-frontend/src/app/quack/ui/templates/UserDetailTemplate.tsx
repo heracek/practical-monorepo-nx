@@ -8,7 +8,7 @@ import {
   Loading,
   MainSection,
   ReloadButton,
-} from 'src/ui';
+} from '@quacker/ui';
 import { TopNavigation } from 'src/navigation/ui';
 
 import { QuackForm } from '../molecules/';

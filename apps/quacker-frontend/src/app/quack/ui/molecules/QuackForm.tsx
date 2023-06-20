@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 
-import { ErrorMessage, TextArea, LoadingButton } from 'src/ui';
+import { ErrorMessage, TextArea, LoadingButton } from '@quacker/ui';
 
 export type QuackFormProps = {
   error?: Error | null;

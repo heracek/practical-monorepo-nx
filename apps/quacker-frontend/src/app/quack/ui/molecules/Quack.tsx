@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-import { AvatarPhoto, Link, UserName, UserUserName } from 'src/ui';
+import { AvatarPhoto, Link, UserName, UserUserName } from '@quacker/ui';
 import { route } from '@quacker/navigation/util';
 
 import { formatDate } from '../utils/date';

@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFeatherAlt } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 
-import { AvatarPhoto, Link, NavLink, Button } from 'src/ui';
+import { AvatarPhoto, Link, NavLink, Button } from '@quacker/ui';
 import { useAuth } from 'src/auth/context-ui';
 import { route } from '@quacker/navigation/util';
 
