@@ -1,0 +1,14 @@
+{
+  "files.exclude": {
+    "**/tsconfig.tsbuildinfo": true,
+    "dist": true,
+    "yarn.lock": true,
+    "yarn-error.log": true
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "project.json": ".babelrc, .browserslistrc, .dockerignore, .editorconfig, .env, .eslintignore, .eslintrc.*, .gitignore, .graphqlrc.*, .nvmrc, .prettierignore, .prettierrc.*, README.md, babel.config.json, cypress.json, jest.config.ts, jest.preset.js, nx.json, package.json, tsconfig.base.json, tsconfig.json, workspace.json, yarn.lock, vercel.json, netlify.toml",
+    "package.json": ".babelrc, .browserslistrc, .dockerignore, .editorconfig, .env, .eslintignore, .eslintrc.*, .gitignore, .graphqlrc.*, .nvmrc, .prettierignore, .prettierrc.*, README.md, babel.config.json, cypress.json, jest.config.ts, jest.preset.js, nx.json, package.json, tsconfig.base.json, tsconfig.json, workspace.json, yarn.lock, vercel.json, netlify.toml"
+  }
+}

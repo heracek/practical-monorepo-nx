@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  min-width: 700px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.pre-line {
+  white-space: pre-line;
+}
+
+.break-word {
+  word-break: break-word;
+}
