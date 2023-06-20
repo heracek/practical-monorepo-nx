@@ -4,58 +4,54 @@
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
       }
     }
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production",
-        "^production"
-      ]
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     },
     "test": {
-      "inputs": [
-        "default",
-        "^production",
-        "{workspaceRoot}/jest.preset.js"
-      ]
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
     },
     "e2e": {
+      "inputs": ["default", "^production"]
+    },
+    "lint": {
       "inputs": [
         "default",
-        "^production"
+        "{workspaceRoot}/.eslintrc.json",
+        "{workspaceRoot}/.eslintignore"
       ]
     }
   },
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/jest.config.[jt]s"
+      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/.eslintrc.json"
     ],
-    "sharedGlobals": [
-      "{workspaceRoot}/babel.config.json"
-    ]
+    "sharedGlobals": ["{workspaceRoot}/babel.config.json"]
   },
   "generators": {
     "@nx/react": {
       "application": {
+        "style": "css",
+        "linter": "eslint",
+        "bundler": "webpack",
         "babel": true
+      },
+      "component": {
+        "style": "css"
+      },
+      "library": {
+        "style": "css",
+        "linter": "eslint"
       }
     }
   }

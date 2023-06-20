@@ -1,0 +1,64 @@
+{
+  "name": "quacker-backend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/quacker-backend/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/quacker-backend",
+        "main": "apps/quacker-backend/src/main.ts",
+        "tsConfig": "apps/quacker-backend/tsconfig.app.json",
+        "assets": ["apps/quacker-backend/src/assets"],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/quacker-backend/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "quacker-backend:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "quacker-backend:build:development"
+        },
+        "production": {
+          "buildTarget": "quacker-backend:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/quacker-backend/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/quacker-backend/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}
