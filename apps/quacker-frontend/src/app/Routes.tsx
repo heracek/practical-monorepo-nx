@@ -4,14 +4,7 @@ import { PageNotFound } from 'src/navigation/ui';
 import { SignInPage, SignUpPage } from 'src/auth/feature';
 import { AboutPage } from 'src/content/feature';
 import { HomePage, UserDetailPage } from 'src/quack/feature';
-
-export const route = {
-  home: () => `/`,
-  about: () => `/about`,
-  signIn: () => `/auth/signin`,
-  signUp: () => `/auth/signup`,
-  userDetail: (userName: string) => `/${userName}`,
-};
+import { route } from '@quacker/navigation/util';
 
 export function Routes() {
   return (

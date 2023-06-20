@@ -13,7 +13,7 @@ import { onError } from '@apollo/client/link/error';
 import type { GraphQLError } from 'graphql';
 
 import { useAuth } from 'src/auth/context-ui';
-import { route } from 'src/Routes';
+import { route } from '@quacker/navigation/util';
 
 import { config } from '../config';
 

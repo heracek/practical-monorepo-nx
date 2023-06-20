@@ -4,7 +4,7 @@ import { gql, useMutation } from '@apollo/client';
 
 import { SignInTemplate } from 'src/auth/ui';
 import { useAuth } from 'src/auth/context-ui';
-import { route } from 'src/Routes';
+import { route } from '@quacker/navigation/util';
 
 const SIGNIN_MUTATION = gql`
   mutation SignIn($email: String!, $password: String!) {

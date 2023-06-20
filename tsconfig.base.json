@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@quacker/navigation/util": ["libs/navigation/util/src/index.ts"],
       "src/*": ["apps/quacker-frontend/src/app/*"]
     }
   },
