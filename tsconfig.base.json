@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@quacker/auth/context-ui": ["libs/auth/context-ui/src/index.ts"],
+      "@quacker/auth/feature": ["libs/auth/feature/src/index.ts"],
+      "@quacker/auth/ui": ["libs/auth/ui/src/index.ts"],
+      "@quacker/navigation/ui": ["libs/navigation/ui/src/index.ts"],
+      "@quacker/navigation/utility": ["libs/navigation/utility/src/index.ts"],
+      "@quacker/quack/feature": ["libs/quack/feature/src/index.ts"],
+      "@quacker/quack/ui": ["libs/quack/ui/src/index.ts"],
+      "@quacker/ui": ["libs/shared/design-system/ui/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

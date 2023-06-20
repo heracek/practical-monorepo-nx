@@ -1,0 +1,24 @@
+{
+  "name": "quack-ui",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/quack/ui/src",
+  "projectType": "library",
+  "tags": ["type:ui"],
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/quack/ui/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/quack/ui"],
+      "options": {
+        "jestConfig": "libs/quack/ui/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

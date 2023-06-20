@@ -1,0 +1,24 @@
+{
+  "name": "navigation-ui",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/navigation/ui/src",
+  "projectType": "library",
+  "tags": ["type:ui"],
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/navigation/ui/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/navigation/ui"],
+      "options": {
+        "jestConfig": "libs/navigation/ui/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

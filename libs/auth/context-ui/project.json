@@ -1,0 +1,24 @@
+{
+  "name": "auth-context-ui",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/auth/context-ui/src",
+  "projectType": "library",
+  "tags": ["type:ui"],
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/auth/context-ui/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/auth/context-ui"],
+      "options": {
+        "jestConfig": "libs/auth/context-ui/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

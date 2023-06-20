@@ -1,0 +1,26 @@
+{
+  "name": "shared-design-system-ui",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/design-system/ui/src",
+  "projectType": "library",
+  "tags": ["type:ui"],
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/design-system/ui/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/shared/design-system/ui"],
+      "options": {
+        "jestConfig": "libs/shared/design-system/ui/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

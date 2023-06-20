@@ -1,0 +1,84 @@
+{
+  "name": "quacker-frontend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/quacker-frontend/src",
+  "projectType": "application",
+  "tags": ["type:app"],
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/quacker-frontend",
+        "index": "apps/quacker-frontend/src/index.html",
+        "baseHref": "/",
+        "main": "apps/quacker-frontend/src/main.tsx",
+        "polyfills": "apps/quacker-frontend/src/polyfills.ts",
+        "tsConfig": "apps/quacker-frontend/tsconfig.app.json",
+        "assets": [
+          "apps/quacker-frontend/src/favicon.ico",
+          "apps/quacker-frontend/src/assets"
+        ],
+        "styles": ["apps/quacker-frontend/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nx/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/quacker-frontend/src/environments/environment.ts",
+              "with": "apps/quacker-frontend/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        },
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/webpack:dev-server",
+      "options": {
+        "buildTarget": "quacker-frontend:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "quacker-frontend:build:production",
+          "hmr": false
+        },
+        "development": {
+          "buildTarget": "quacker-frontend:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/quacker-frontend/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/apps/quacker-frontend"],
+      "options": {
+        "jestConfig": "apps/quacker-frontend/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

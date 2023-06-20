@@ -1,0 +1,24 @@
+{
+  "name": "quack-feature",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/quack/feature/src",
+  "projectType": "library",
+  "tags": ["type:feature"],
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/quack/feature/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/quack/feature"],
+      "options": {
+        "jestConfig": "libs/quack/feature/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
